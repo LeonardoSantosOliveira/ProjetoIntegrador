@@ -37,3 +37,140 @@
     padding: 11px;
     font-size: 18px;
 }
+
+/* Menu Left */
+
+.menu-left {
+    width: 250px;
+    background-color: var(--color-secondary);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    padding-left: 25px;
+}
+
+.menu-left .menus {
+    margin-top: 55px;
+}
+
+.menu-left .logo {
+    text-align: center;
+    margin-left: -25px;
+    margin-top: 30px;
+}
+
+.menu-item {
+    display: block;
+    padding: 15px 30px;
+    color: var(--color-black) !important;
+    text-decoration: none !important;
+}
+
+.menu-item i {
+    width: 18px;
+    text-align: center;
+    margin-right: 8px;
+}
+
+.menu-item.active {
+    background-color: var(--color-background);
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.menu-item.active::before {
+    content: "";
+    height: 50px;
+    width: 25px;
+    background-color: transparent;
+    position: absolute;
+    border-top-left-radius: 25px;
+    box-shadow: 0 -25px 0 0 var(--color-background);
+    right: 0;
+    margin-top: -65px;
+    rotate: 180deg;
+}
+
+.menu-item.active::after {
+    content: "";
+    height: 50px;
+    width: 25px;
+    background-color: transparent;
+    position: absolute;
+    border-top-right-radius: 25px;
+    box-shadow: 0 -25px 0 0 var(--color-background);
+    right: 0;
+    margin-top: 40px;
+}
+
+/* Menu Topo */
+.title-page {
+    color: var(--color-black);
+    font-size: 20px;
+    flex: 1;
+}
+
+.container-right {
+    display: flex;
+    align-items: center;
+}
+
+.container-right p {
+    margin-bottom: 0px;
+    font-size: 16px;
+    text-align: right;
+    color: var(--color-black);
+    line-height: 15px;
+}
+
+.container-right span {
+    font-size: 13px;
+    text-align: right;
+    color: var(--color-text-out);
+}
+
+.container-dados {
+    margin-right: 30px;
+}
+
+.conteudo {
+    padding-left: 270px;
+    padding-right: 15px;
+}
+
+.conteudo-inner {
+    margin-top: 50px;
+}
+
+/* Tela Pedidos */
+
+.menus-pedido {
+
+}
+
+.menus-pedido i {
+    margin-right: 5px;
+}
+
+.menus-pedido a {
+    margin-right: 10px;
+    opacity: 0.5;
+}
+
+.menus-pedido a.active, .menus-pedido a:hover {
+    opacity: 1;
+}
+
+
+.badge-total-pedidos {
+    display: inline-block;
+    background-color: var(--color-primary-out);
+    border-radius: 50px;
+    font-size: 14px;
+    width: 25px;
+    text-align: center;
+    margin-left: 5px;
+}
