@@ -28,10 +28,10 @@
                 <a href="./pedidos.html" class="menu-item active">
                     <i class="fas fa-utensils"></i> Pedidos
                 </a>
-                <a href="#" class="menu-item">
+                <a href="./cardapio.html" class="menu-item">
                     <i class="fas fa-book-open"></i> Cardápio
                 </a>
-                <a href="#" class="menu-item">
+                <a href="./configuracoes.html" class="menu-item ">
                     <i class="fas fa-cog"></i> Configurações
                 </a>
                 <a href="#" class="menu-item">
@@ -101,8 +101,9 @@
                                     <div class="card card-pedido">
                                         <div class="card-pedido-header">
                                             <div class="dropdown">
-                                                <button class="btn btn-white btn-sm dropdown-toggle" type="button"
-                                                    data-bs-toggle="dropdown" aria-expanded="false" id="menuAcoes">
+                                                <button class="btn btn-white btn-sm dropdown-toggle active"
+                                                    type="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                                    id="menuAcoes">
                                                     Pendente
                                                 </button>
                                                 <div class="dropdown-menu" aria-labelledby="menuAcoes">
@@ -120,7 +121,8 @@
                                             </div>
                                             <p class="numero-pedido mt-2">#1</p>
                                         </div>
-                                        <div class="card-content">
+                                        <div class="card-content" data-bs-toggle="modal"
+                                            data-bs-target="#modalDetalhes">
                                             <div class="card-pedido-body mt-3">
                                                 <p class="info-pedido">
                                                     <i class="fas fa-user"></i>
@@ -139,7 +141,7 @@
                                             <div class="separate"></div>
                                             <div class="card-pedido-footer">
                                                 <p class="horario-pedido">Recebido há 33 minutos</p>
-                                                <p class="total-pedido"><b>R$  143,50</b></p>
+                                                <p class="total-pedido"><b>R$ 143,50</b></p>
                                             </div>
                                         </div>
                                     </div>
@@ -151,6 +153,135 @@
             </div>
         </div>
     </section>
+
+    <div id="modalDetalhes" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">#1 <span class="horario-pedido">Recebido há 33 minutos</span></h5>
+                    <button class="btn btn-white btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fas fa-fimes"></i>&nbsp; Fechar
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-dados-pedido pt-1">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card card-address cursor-default">
+                                    <div class="img-icon-details">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="infos pe-0">
+                                        <div class="d-flex">
+                                            <p class="name mb-0"><b>Leonardo Santos</b></p>
+                                            <span class="text mb-0">
+                                                (13) 99735-8888
+                                            </span>
+                                        </div>
+                                        <div class="d-flex">
+                                            <span class="info-pedido mb-0">
+                                                Recebido em 12/05/2025 às 18:00
+                                            </span>
+                                            <span class="info-pedido link mb-0">
+                                                <i class="fas fa-motorcycle"></i> Entrega
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="card card-address cursor-default mt-2">
+                                    <div class="img-icon-details">
+                                        <i class="fas fa-coins"></i>
+                                    </div>
+                                    <div class="infos pe-0">
+                                        <p class="name mb-0"><b>Dinheiro</b></p>
+                                        <span class="text mb-0">
+                                            Troco para: R$50,00
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="card card-address mt-2">
+                                    <div class="img-icon-details">
+                                        <i class="fas fa-map-marked-alt"></i>
+                                    </div>
+                                    <div class="infos pe-0">
+                                        <p class="name mb-0"><b>Rua Olá Mundo, 123, Meu Bairro</b></p>
+                                        <span class="text mb-0">
+                                            Cidade-SP / CEP: 11920-000
+                                        </span>
+                                    </div>
+                                    <div class="icon-edit">
+                                        <i class="fas fa-location-arrow"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-itens-pedido carrinho">
+                        <div id="itensPedido">
+                            <div class="card-item mb-2 pe-0">
+                                <div class="container-detalhes">
+                                    <div class="detalhes-produto">
+                                        <div class="infos-produto">
+                                            <p class="name"><b>1x Calabresa</b></p>
+                                            <p class="price"><b>R$ 39,90</b></p>
+                                        </div>
+                                        <div class="infos-produto">
+                                            <p class="name-opcional mb-0">1x Borda de Catupiry</p>
+                                            <p class="price-opcional mb-0">+ R$ 9,90</p>
+                                        </div>
+                                        <div class="infos-produto">
+                                            <p class="obs-opcional mb-0">- Observação para enviar talheres de plástico
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-item mb-2 pe-0">
+                                <div class="container-detalhes">
+                                    <div class="detalhes-produto">
+                                        <div class="infos-produto">
+                                            <p class="name"><b>1x 4 Queijos</b></p>
+                                            <p class="price"><b>R$ 39,90</b></p>
+                                        </div>
+                                        <div class="infos-produto">
+                                            <p class="name-opcional mb-0">1x Borda de Catupiry</p>
+                                            <p class="price-opcional mb-0">+ R$ 9,90</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-item mb-2">
+                                <div class="detalhes-produto">
+                                    <div class="infos-produto">
+                                        <p class="name mb-0"><i class="fas fa-motorcycle"></i>&nbsp;<b>Taxa de
+                                                entrega</b></p>
+                                        <p class="price mb-0"><b>+ R$ 15,00</b></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-item mb-2">
+                                <div class="detalhes-produto">
+                                    <div class="infos-produto">
+                                        <p class="name-total mb-0"><b>Total</b></p>
+                                        <p class="price-total mb-0"><b>R$ 105,00</b></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-btn mt-3">
+                            <button type="button" class="btn btn-yellow btn-sm">
+                                Aceitar Pedido
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <script src="../js/bootstrap.bundle.min.js"></script>

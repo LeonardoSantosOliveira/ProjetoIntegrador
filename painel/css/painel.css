@@ -147,9 +147,7 @@
 
 /* Tela Pedidos */
 
-.menus-pedido {
-
-}
+.menus-pedido {}
 
 .menus-pedido i {
     margin-right: 5px;
@@ -160,7 +158,8 @@
     opacity: 0.5;
 }
 
-.menus-pedido a.active, .menus-pedido a:hover {
+.menus-pedido a.active,
+.menus-pedido a:hover {
     opacity: 1;
 }
 
@@ -211,7 +210,7 @@
     font-size: 14px;
 }
 
-.total-pedido{
+.total-pedido {
     text-align: right;
     margin-bottom: 0;
     margin-top: 15px;
@@ -221,6 +220,385 @@
 .card-pedido {
     box-shadow: 1px 0px 15px 3px rgba(0, 0, 0, 0.1) !important;
     border-radius: 0 !important;
+
 }
 
-.
+.card-pedido::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 10px;
+    width: 100%;
+    top: -7px;
+    background: radial-gradient(circle, transparent, transparent 50%, #ffffff 50%, #ffffff 100%) -7px -8px / 16px 16px repeat-x;
+}
+
+.card-pedido::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 10px;
+    width: 100%;
+    bottom: -7px;
+    background: radial-gradient(circle, transparent, transparent 50%, #ffffff 50%, #ffffff 100%) -15px 2px / 16px 16px repeat-x;
+}
+
+.card-pedido:hover {
+    background-color: var(--color-secondary);
+}
+
+.card-pedido:hover::before {
+    background-image: radial-gradient(circle, transparent, transparent 50%, var(--color-secondary) 50%, var(--color-secondary) 100%);
+}
+
+.card-pedido:hover::after {
+    background-image: radial-gradient(circle, transparent, transparent 50%, var(--color-secondary) 50%, var(--color-secondary) 100%);
+}
+
+.card-content {
+    cursor: pointer;
+}
+
+.card-pedido-body {
+    height: 140px;
+}
+
+/* Modal Detalhes */
+
+.modal-content {
+    background: transparent;
+    border: none;
+}
+
+.modal-header {
+    border-bottom: 0;
+    background-color: var(--color-background);
+    border-radius: 0px;
+}
+
+.modal-header::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 10px;
+    width: 100%;
+    top: -8px;
+    background: radial-gradient(circle, transparent, transparent 50%, var(--color-background) 50%, var(--color-background) 100%) -7px -8px / 16px 16px repeat-x;
+}
+
+.modal-title {
+    font-size: 18px;
+    color: var(--color-black);
+}
+
+.modal-title .horario-pedido {
+    font-size: 14px;
+    color: var(--color-text);
+    padding-left: 15px;
+}
+
+.link {
+    color: var(--color-primary);
+    font-size: 14px;
+}
+
+.modal-body {
+    padding: 0;
+}
+
+.container-dados-pedido {
+    padding: 20px;
+    padding-bottom: 25px;
+    background-color: var(--color-background);
+}
+
+.container-dados-pedido .d-flex {
+    justify-content: space-between;
+}
+
+.cursor-default {
+    cursor: default;
+}
+
+.container-dados-pedido .info-pedido {
+    font-size: 14px;
+    color: var(--color-text);
+}
+
+.container-dados-pedido .info-pedido.link {
+    color: var(--color-primary) !important;
+}
+
+.container-itens-pedido {
+    padding: 20px;
+    background-color: var(--color-white);
+}
+
+.container-itens-pedido .card-item {
+    padding: 5px 0px 10px 0px;
+    border-bottom: 1px dashed #cdcdcd;
+}
+
+.container-itens-pedido .card-item:last-child {
+    border: none;
+}
+
+.container-itens-pedido::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 10px;
+    width: 100%;
+    margin-top: 17px;
+    background: radial-gradient(circle, transparent, transparent 50%, var(--color-background) 50%, var(--color-background) 100%) -15px 2px / 16px 16px repeat-x;
+}
+
+.footer-btn {
+    display: flex;
+    justify-content: end;
+}
+
+/* Cardápio */
+
+.card-drag {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.drag-icon {
+    display: flex;
+    width: 25px;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    height: 35px;
+    cursor: grab;
+}
+
+.card-drag .infos {
+    flex: 1;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 16px;
+}
+
+.card-drag .infos .name {
+    color: var(--color-black) !important;
+    text-decoration: none;
+}
+
+.actions {
+    display: flex;
+}
+
+.icon-action {
+    margin-left: 10px;
+    font-size: 16px;
+    color: var(--color-black) !important;
+    text-decoration: none;
+    width: 35px;
+    height: 35px;
+    background-color: var(--color-white);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: var(--box-shadow) !important;
+}
+
+.icon-action:hover {
+    background-color: var(--color-secondary);
+}
+
+.title-produtos {
+    font-size: 14px;
+    color: var(--color-black);
+}
+
+.drag-icon-produto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    font-size: 16px;
+    cursor: grab;
+}
+
+.lista-produtos .container-img-produto {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+
+.lista-produtos .infos-produto {
+    flex: 1;
+}
+
+.badge-adicionais {
+    position: absolute;
+    top: 6px;
+    margin-left: 26px;
+    font-size: 12px;
+    background-color: var(--color-primary);
+    color: var(--color-black);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Delivery e Retirada */
+
+.menus-config i {
+    margin-right: 5px;
+}
+
+.menus-config a {
+    margin-right: 10px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    -webkit-transition: .4s;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    height: 17px;
+    width: 17px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--color-white);
+    transition: 0.4s;
+    -webkit-transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: var(--color-primary) !important;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px var(--color-primary);
+}
+
+input:checked+.slider::before {
+    transform: translateX(25px);
+    -webkit-transform: translateX(25px);
+    -ms-transform: translateX(25px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round::before {
+    border-radius: 50%;
+}
+
+.infos.config .text {
+    position: absolute;
+    left: 60px;
+    top: 2px;
+}
+
+.tempo {
+    display: flex;
+}
+
+.tempo label {
+    font-size: 14px;
+    color: var(--color-black);
+}
+
+.tempo .form-group {
+    margin-right: 20px;
+}
+
+.tempo .form-group:last-child {
+    margin-right: 0px;
+}
+
+.tempo.disabled label {
+    opacity: 0.65;
+}
+
+.tempo.disabled input {
+    background-color: #f5f5f5 !important;
+}
+
+.container-group.inline {
+    display: flex;
+    column-gap: 15px;
+}
+
+.group-select {
+    display: flex;
+}
+
+.group-select .container-check {
+    font-size: 16px;
+    color: var(--color-black);
+    font-weight: bold;
+    padding-left: 35px;
+    margin-right: 20px;
+    margin-bottom: 0px;
+}
+
+.form-sm {
+    width: 150px;
+}
+
+.table {
+    font-size: 16px;
+}
+
+.table td {
+    color: var(--color-text);
+    vertical-align: middle;
+}
+
+.badge {
+    padding: 10px 15px;
+    border-radius: 50px;
+}
+
+.badge-success {
+    border: 1px solid var(--color-green);
+    color: var(--color-green);
+}
+
+.badge-danger {
+    border: 1px solid var(--color-red);
+    color: var(--color-red);
+}
+
+.color-red {
+    color: var(--color-red) !important;
+}

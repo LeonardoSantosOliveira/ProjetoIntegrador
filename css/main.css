@@ -21,6 +21,7 @@
     --color-green: #2ecc71;
     --color-sepate: #cccccc;
     --color-input-out: #ececec;
+    --box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 html,
@@ -58,7 +59,7 @@ b {
     border-radius: 20px;
     padding: 15px 20px;
     font-size: 20px;
-    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+    box-shadow: var(--box-shadow) !important;
     border: none !important;
 }
 
@@ -168,7 +169,7 @@ section.categoria {
 .btn-white:hover,
 .btn-white.active {
     background-color: var(--color-primary);
-    color: var(--color-white);
+    color: var(--color-black);
 }
 
 .title-categoria {
@@ -404,7 +405,7 @@ section.categoria {
     border-radius: 20px;
     padding: 15px 25px;
     font-size: 16px;
-    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+    box-shadow: var(--box-shadow) !important;
     border: none !important;
     height: 50px;
     resize: none;
@@ -470,7 +471,7 @@ textarea {
     background-position: center;
     background-color: var(--color-white);
     border-radius: 15px;
-    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+    box-shadow: var(--box-shadow) !important;
 }
 
 .normal-text {
@@ -494,7 +495,7 @@ textarea {
     border-radius: 20px;
     padding: 15px 25px;
     font-size: 18px;
-    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+    box-shadow: var(--box-shadow) !important;
     border: 1px solid #ffe28c;
     display: flex;
     justify-content: space-between;
