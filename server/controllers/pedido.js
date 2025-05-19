@@ -5,7 +5,7 @@ const readCommandSql = new ReadCommandSql();
 const fetch = require('node-fetch');
 
 // CHAVE API KEY - Geoapify
-const key = 'SUA_CHAVE';
+const key = 'f4f392469e324b35aa2421ed96374d59';
 
 const controllers = () => {
 
