@@ -6,9 +6,9 @@ var config = {
         database: {
             host: '127.0.0.1',
             port: 3306,
-            user: 'USUARIO',
-            password: 'SENHA',
-            database: 'NOME_BANCO',
+            user: 'root',
+            password: 'root',
+            database: 'delivery',
             timezone: 'utc'
         }
     }
