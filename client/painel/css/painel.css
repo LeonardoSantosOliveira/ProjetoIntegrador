@@ -1,4 +1,4 @@
-/*Login*/
+/* Login */
 
 .login {
     width: calc(100% - 20px);
@@ -107,7 +107,8 @@
 }
 
 /* Menu Topo */
-.title-page {
+
+h1.title-page {
     color: var(--color-black);
     font-size: 20px;
     flex: 1;
@@ -118,15 +119,15 @@
     align-items: center;
 }
 
-.container-right p {
-    margin-bottom: 0px;
+.container-dados p {
+    margin-bottom: 0;
     font-size: 16px;
     text-align: right;
     color: var(--color-black);
     line-height: 15px;
 }
 
-.container-right span {
+.container-dados span {
     font-size: 13px;
     text-align: right;
     color: var(--color-text-out);
@@ -147,8 +148,6 @@
 
 /* Tela Pedidos */
 
-.menus-pedido {}
-
 .menus-pedido i {
     margin-right: 5px;
 }
@@ -162,7 +161,6 @@
 .menus-pedido a:hover {
     opacity: 1;
 }
-
 
 .badge-total-pedidos {
     display: inline-block;
@@ -178,9 +176,10 @@
     font-size: 16px;
 }
 
-.dropdown {
+.card-pedido .dropdown {
     float: right;
 }
+
 
 .info-pedido {
     font-size: 16px;
@@ -189,8 +188,8 @@
 }
 
 .info-pedido i {
-    text-align: center;
     width: 25px;
+    text-align: center;
 }
 
 .info-pedido span {
@@ -202,29 +201,29 @@
 .separate {
     height: 1px;
     background-color: var(--color-text-out);
-    margin: 20px 0 10px 0;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .horario-pedido {
-    margin-bottom: 0;
+    margin-bottom: 0px;
     font-size: 14px;
 }
 
 .total-pedido {
     text-align: right;
-    margin-bottom: 0;
+    margin-bottom: 0px;
     margin-top: 15px;
     color: var(--color-primary);
 }
 
 .card-pedido {
     box-shadow: 1px 0px 15px 3px rgba(0, 0, 0, 0.1) !important;
-    border-radius: 0 !important;
-
+    border-radius: 0px;
 }
 
 .card-pedido::before {
-    content: "";
+    content: '';
     position: absolute;
     left: 0;
     height: 10px;
@@ -234,7 +233,7 @@
 }
 
 .card-pedido::after {
-    content: "";
+    content: '';
     position: absolute;
     left: 0;
     height: 10px;
@@ -247,11 +246,7 @@
     background-color: var(--color-secondary);
 }
 
-.card-pedido:hover::before {
-    background-image: radial-gradient(circle, transparent, transparent 50%, var(--color-secondary) 50%, var(--color-secondary) 100%);
-}
-
-.card-pedido:hover::after {
+.card-pedido:hover::before, .card-pedido:hover::after {
     background-image: radial-gradient(circle, transparent, transparent 50%, var(--color-secondary) 50%, var(--color-secondary) 100%);
 }
 
@@ -263,7 +258,7 @@
     height: 140px;
 }
 
-/* Modal Detalhes */
+/* Modal detalhes */
 
 .modal-content {
     background: transparent;
@@ -277,7 +272,7 @@
 }
 
 .modal-header::before {
-    content: "";
+    content: '';
     position: absolute;
     left: 0;
     height: 10px;
@@ -297,11 +292,6 @@
     padding-left: 15px;
 }
 
-.link {
-    color: var(--color-primary);
-    font-size: 14px;
-}
-
 .modal-body {
     padding: 0;
 }
@@ -317,16 +307,12 @@
 }
 
 .cursor-default {
-    cursor: default;
+    cursor: default!important;
 }
 
 .container-dados-pedido .info-pedido {
     font-size: 14px;
     color: var(--color-text);
-}
-
-.container-dados-pedido .info-pedido.link {
-    color: var(--color-primary) !important;
 }
 
 .container-itens-pedido {
@@ -344,13 +330,13 @@
 }
 
 .container-itens-pedido::after {
-    content: "";
+    content: '';
     position: absolute;
     left: 0;
     height: 10px;
     width: 100%;
     margin-top: 17px;
-    background: radial-gradient(circle, transparent, transparent 50%, var(--color-background) 50%, var(--color-background) 100%) -15px 2px / 16px 16px repeat-x;
+    background: radial-gradient(circle, transparent, transparent 50%, #ffffff 50%, #ffffff 100%) -15px 2px / 16px 16px repeat-x;
 }
 
 .footer-btn {
@@ -385,8 +371,8 @@
 }
 
 .card-drag .infos .name {
-    color: var(--color-black) !important;
-    text-decoration: none;
+    color: var(--color-black)!important;
+    text-decoration: none!important;
 }
 
 .actions {
@@ -396,18 +382,18 @@
 .icon-action {
     margin-left: 10px;
     font-size: 16px;
-    color: var(--color-black) !important;
-    text-decoration: none;
+    color: var(--color-black)!important;
+    text-decoration: none!important;
     width: 35px;
     height: 35px;
     background-color: var(--color-white);
-    border-radius: 50%;
+    border-radius: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     transition: all 0.3s;
-    box-shadow: var(--box-shadow) !important;
+    box-shadow: var(--box-shadow);
 }
 
 .icon-action:hover {
@@ -421,9 +407,9 @@
 
 .drag-icon-produto {
     display: flex;
+    width: 35px;
     justify-content: center;
     align-items: center;
-    width: 35px;
     font-size: 16px;
     cursor: grab;
 }
@@ -441,13 +427,13 @@
 .badge-adicionais {
     position: absolute;
     top: 6px;
-    margin-left: 26px;
+    margin-left: 19px;
     font-size: 12px;
     background-color: var(--color-primary);
     color: var(--color-black);
     width: 20px;
     height: 20px;
-    border-radius: 50%;
+    border-radius: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -483,8 +469,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
-    transition: 0.4s;
+    background-color: var(--color-separate);
+    transition: .4s;
     -webkit-transition: .4s;
 }
 
@@ -496,19 +482,19 @@
     left: 4px;
     bottom: 4px;
     background-color: var(--color-white);
-    transition: 0.4s;
+    transition: .4s;
     -webkit-transition: .4s;
 }
 
-input:checked+.slider {
-    background-color: var(--color-primary) !important;
+input:checked + .slider {
+    background-color: var(--color-primary);
 }
 
-input:focus+.slider {
+input:focus + .slider {
     box-shadow: 0 0 1px var(--color-primary);
 }
 
-input:checked+.slider::before {
+input:checked + .slider::before {
     transform: translateX(25px);
     -webkit-transform: translateX(25px);
     -ms-transform: translateX(25px);
@@ -550,7 +536,7 @@ input:checked+.slider::before {
 }
 
 .tempo.disabled input {
-    background-color: #f5f5f5 !important;
+    background-color: #f5f5f5!important;
 }
 
 .container-group.inline {
@@ -568,7 +554,7 @@ input:checked+.slider::before {
     font-weight: bold;
     padding-left: 35px;
     margin-right: 20px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 .form-sm {
@@ -600,7 +586,11 @@ input:checked+.slider::before {
 }
 
 .color-red {
-    color: var(--color-red) !important;
+    color: var(--color-red)!important;
+}
+
+.opacity-05 {
+    opacity: 0.5;
 }
 
 /* Empresa */
@@ -625,8 +615,7 @@ input:checked+.slider::before {
 }
 
 .detalhes-empresa textarea {
-    height: 250px !important;
-    resize: none !important;
+    height: 250px!important;
 }
 
 .container-cep .form-control {
@@ -644,10 +633,10 @@ input:checked+.slider::before {
 }
 
 .horario .btn-red {
-    margin-top: 32px;
+    margin-top: 30px;
 }
 
-/* Relatório */
+/* Relatórios */
 
 .value-card {
     font-size: 20px;
@@ -655,5 +644,150 @@ input:checked+.slider::before {
 }
 
 .card-table, .data-table {
-    font-size: 14px !important;
+    font-size: 14px!important;
+}
+
+
+/* Modal upload logo */
+
+.modal-cadastro .modal-content {
+    background-color: var(--color-white);
+}
+
+.upload #drop-area {
+    border: 2px dashed var(--color-primary);
+    border-radius: 20px;
+    padding: 70px 30px;
+    background: var(--color-white);
+}
+
+.upload #drop-area.highlight {
+    background-color: var(--color-secondary);
+}
+
+.upload p {
+    margin-top: 0;
+    color: var(--color-black);
+}
+
+.upload .my-form {
+    margin-bottom: 10px;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.upload #fileElem {
+    display: none;
+}
+
+/* Modal de Edição / Cadastro */
+
+.modal-form .modal-content, .modal-form .modal-header {
+    background-color: var(--color-white);
+}
+
+.modal-form .modal-header {
+    border-bottom: 1px solid #f5f5f5;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.modal-form .modal-header::before {
+    content: none;
+}
+
+.modal-form .modal-body {
+    padding: 20px;
+}
+
+.fa-select, .fa-select option {
+    font-family: 'Lato', 'Font Awesome 5 Free';
+    font-weight: 900;
+}
+
+#chartjs-tooltip {
+    background-color: var(--color-secondary);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#chartjs-tooltip th,
+#chartjs-tooltip b {
+    font-weight: bold !important;
+    color: var(--color-black);
+}
+
+#lblNenhumFaturamento {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 175px;
+    font-size: 18px;
+    color: var(--color-black);
+}
+
+
+.flex-hint {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-left: 5px solid var(--color-primary);
+    background-color: #ebebeb;
+    border-radius: 10px;
+}
+
+.rascunho {
+    float: right;
+    color: var(--color-black);
+    background-color: #e1e1e1;
+    padding: 6px 10px;
+    font-size: 11px;
+}
+
+.title-home-page {
+    font-size: 18px;
+    color: var(--color-black);
+}
+
+.title-card {
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--color-black);
+}
+
+#card-grafico-meios-pagamento, #card-grafico-tipos-entrega {
+    height: 300px;
+}
+
+#card-grafico-dias-semana {
+    height: 520px;
+}
+
+/* Impressão */
+
+#container-action-footer {
+    justify-content: space-between;
+}
+
+.print * {
+    background: #FFF !important;
+    color: #000!important;
+}
+
+.print .card {
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0px !important;
+    padding: 0px !important; 
+}
+
+.print .container-dados-pedido {
+    border-bottom: 1px solid #000;
+}
+
+.print .footer-btn {
+    display: none!important;
 }
