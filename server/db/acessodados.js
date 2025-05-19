@@ -22,7 +22,21 @@ module.exports = class AcessoDados {
                         let campo = key;
                         let valor = p[key];
 
-                        SqlQueryUp = SqlQueryUp.replace('@' + campo, `'${valor}'`);
+                        // valida se é número
+                        if (valor != '' && !isNaN(valor)) {
+                            // valida se é float ou int
+                            if (!Number.isInteger(parseFloat(valor))) // float
+                                SqlQueryUp = SqlQueryUp.replace('@' + campo, valor);
+                            else // int
+                                SqlQueryUp = SqlQueryUp.replace('@' + campo, valor);
+                        }
+                         // valida se é data (yyyy-MM-dd)
+                        else if (valor != '' && valor.split('-').length == 3 && valor.length == 10) //date
+                                SqlQueryUp = SqlQueryUp.replace('@' + campo, `'${valor}'`);
+
+                        else {
+                            SqlQueryUp = SqlQueryUp.replace('@' + campo, `'${valor}'`);
+                        }
 
                     }
 
@@ -37,6 +51,7 @@ module.exports = class AcessoDados {
                 connection.query(SqlQueryUp, function (error, results, fields) {
                     if (error) {
                         reject();
+                        throw error;
                     }
                     retorno = results;
                     resolve();

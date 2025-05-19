@@ -1,5 +1,5 @@
-const AcessosDados = require('../db/acessodados');
-const db = new AcessosDados();
+const AcessoDados = require('../db/acessodados');
+const db = new AcessoDados();
 const ReadCommandSql = require('../common/readCommandSql');
 const readCommandSql = new ReadCommandSql();
 const UsuarioAcessoToken = require('../common/protecaoAcesso');
@@ -10,29 +10,30 @@ const crypto = require('crypto');
 const controllers = () => {
 
     const login = async (req) => {
-
+        
         var password = req.body.senha;
-        //validar se o usuário existe no banco de dados
-        var ComandoSql = await readCommandSql.retornaStringSql('login', 'login');
+
+        // validar se o usuário existe no banco de dados
+        var ComandoSql = await readCommandSql.restornaStringSql('login', 'login');
         var usuarioBanco = await db.Query(ComandoSql, req.body);
 
-        if (usuarioBanco != undefined && usuarioBanco.lenght > 0) {
-            //existe o usuario no banco
+        if (usuarioBanco != undefined && usuarioBanco.length > 0) {
+            // existe o usuário no banco
 
-            //validar se as senhas são iguais;
+            // validar se as senhas são iguais
             var hashSenha = crypto.createHmac('sha256', password).digest('hex');
 
-            console.log('senha do usuário', hashSenha);
-            console.log('senha no banco', usuarioBanco[0].senha);
+            console.log('Senha do usuário: ', hashSenha);
+            console.log('Senha no Banco: ', usuarioBanco[0].senha);
 
-            if (hashSenha.toLocaleLowerCase() != usuarioBanco[0].senha.toLocaleLowerCase()) {
+            if (hashSenha.toLowerCase() != usuarioBanco[0].senha.toLowerCase()) {
                 return {
                     status: 'error',
-                    message: 'Usuário ou senha incorretos.'
+                    message: "Usuário ou senha incorretos." // Senha incorreta
                 }
             }
 
-            //se tiver tudo ok, gera o token e retornao JSON
+            // se tiver tudo ok, gera o token e retorna o JSON
             var tokenAcesso = Acesso.gerarTokenAcesso(usuarioBanco[0]);
 
             return {
@@ -42,12 +43,12 @@ const controllers = () => {
                 Email: usuarioBanco[0].email,
                 Logo: usuarioBanco[0].logotipo
             }
-        }
+
         }
         else {
             return {
                 status: 'error',
-                message: 'Usuário ou senha incorretos' //Usuário não cadastrado no sistema
+                message: "Usuário ou senha incorretos." // Usuário não cadastrado no sistema
             }
         }
 

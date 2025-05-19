@@ -1,16 +1,21 @@
 var fs = require('fs');
 
 module.exports = class ReadCommandSql {
-    async retornaStringSql(chave, controller) {
+
+    async restornaStringSql(chave, controller) {
+
         var commandRegex = '';
 
         try {
-            await new Promise(async(resolve) => {
-                await fs.readFile(`./server/scripts/${controller}.sql`, function(error, buf) {
-                    if (error) {
-                        console.log(erorr);
+            
+            await new Promise(async (resolve) => {
+
+                await fs.readFile(`./server/scripts/${controller}.sql`, function (err, buf) {
+                    if (err) { 
+                        console.log(err); 
                         resolve();
                     }
+
                     var str = buf.toString();
                     var regex = new RegExp(`^--INIT#${chave}#(.*?)^--END#${chave}#`, "sm");
 
@@ -19,11 +24,15 @@ module.exports = class ReadCommandSql {
 
                     resolve();
                 })
-            })
+
+            });
+
         } catch (error) {
             
         }
 
         return commandRegex;
+
     }
+
 }
